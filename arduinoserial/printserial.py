@@ -11,8 +11,10 @@ BAUDRATE = 9600 # default baudrate
 BAUDRATES = [BAUDRATE, 300, 1200, 2400, 4800, 9600, 19200, 38400, 57600, 74880,
              115200, 230400, 250000, 500000, 1000000, 2000000]
 #arduinos = {"COM3": {"baudrate": 19200, "readyline": "Hello!\n"}}
-arduinos = {"COM3": {}}
+#arduinos = {"COM3": {}}
+#arduinos = {"COM3": {"baudrate": 19200}}
 #arduinos = {"COM3": {"readyline": "Hello!\n"}}
+#arduinos = {"COM3": {"possible_baudrates": [2, 3]}}
 #arduinos = {"COM3": {"baudrate": 1, "possible_baudrates": [2, 3], "readyline": "Hello!\n"}}
 ENCODING = "ASCII"
 
@@ -95,11 +97,12 @@ def test_baudrate(com_port,
 
 
 for com_port in arduinos:
-    baudrate = arduinos[com_port].get("baudrate", BAUDRATE)
+    baudrate = arduinos[com_port].get("baudrate")
     baudrates = arduinos[com_port].get("possible_baudrates", BAUDRATES)
-    baudrates = IndexedSet([baudrate] + baudrates)
     if not baudrate:
         baudrate = baudrates[0]
+    else:
+        baudrates = IndexedSet([baudrate] + baudrates)
     readyline = arduinos[com_port].get("readyline")
 
     baudrate = test_baudrate(com_port, firstchoice=baudrate,
