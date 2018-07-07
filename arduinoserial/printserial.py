@@ -10,12 +10,12 @@ from boltons.setutils import IndexedSet
 BAUDRATE = 9600 # default baudrate
 BAUDRATES = [BAUDRATE, 300, 1200, 2400, 4800, 9600, 19200, 38400, 57600, 74880,
              115200, 230400, 250000, 500000, 1000000, 2000000]
-#arduinos = {"COM3": {"baudrate": 19200, "readyline": "Hello!\n"}}
-#arduinos = {"COM3": {}}
-#arduinos = {"COM3": {"baudrate": 19200}}
-#arduinos = {"COM3": {"readyline": "Hello!\n"}}
-#arduinos = {"COM3": {"possible_baudrates": [2, 3]}}
-#arduinos = {"COM3": {"baudrate": 1, "possible_baudrates": [2, 3], "readyline": "Hello!\n"}}
+arduinos = {"COM3": {}} # works
+arduinos = {"COM3": {"baudrate": 19200}} # works
+arduinos = {"COM3": {"readyline": "Hello!\n"}} # works
+#arduinos = {"COM3": {"possible_baudrates": [2, 3]}} # meant to fail
+#arduinos = {"COM3": {"baudrate": 1, "possible_baudrates": [2, 3], "readyline": "Hello!\n"}} # meant to fail
+arduinos = {"COM3": {"baudrate": 19200, "readyline": "Hello!\n"}} # works
 ENCODING = "ASCII"
 
 
