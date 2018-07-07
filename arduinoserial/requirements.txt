@@ -1,1 +1,2 @@
-pySerial
+pySerial>=3.4
+boltons>=18.0.0

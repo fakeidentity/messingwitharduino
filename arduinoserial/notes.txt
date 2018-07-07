@@ -1,3 +1,22 @@
 notes
 
 pip install -r requirements.txt
+
+TODO:
+basic logging
+
+automatically try different com ports
+
+look for specific printed values and graph them or accumulate to csv file
+
+CLI
+use Click
+
+GUI
+try that new frameworky thing that tries to be magic and supports all OSes including Android...
+
+think about how arduino could tell us what its serial capabilities are
+ardunioA might have a voltage test it can/should run.
+ardunioB might have the voltage test and a radio test.
+maybe we just want to run_all_tests() or something...?
+or could do it the other way where we send 'run tests\n' and the arduinos do their own thing?
