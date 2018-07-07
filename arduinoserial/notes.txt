@@ -5,6 +5,8 @@ pip install -r requirements.txt
 TODO:
 basic logging
 
+tests
+
 automatically try different com ports
 
 look for specific printed values and graph them or accumulate to csv file
